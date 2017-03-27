@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class RefreshControlHead: RefreshControl {
+open class RefreshControlHead: RefreshControl {
     var refreshHeight:CGFloat = 65
     
-    override public func didMoveToSuperview() {
+    override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         
         guard let scrollView = self.superview as? UIScrollView else {
@@ -22,7 +22,7 @@ public class RefreshControlHead: RefreshControl {
         self.frame = CGRect(x: 0, y: -refreshHeight, width: width, height: refreshHeight)
     }
     
-    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == .contentOffset{
             guard let scrollView = object as? UIScrollView else { return }
             

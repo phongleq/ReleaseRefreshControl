@@ -19,8 +19,8 @@ internal extension String {
     static let contentOffset = "contentOffset"
 }
 
-public class RefreshControl: UIControl {
-    override public func didMoveToSuperview() {
+open class RefreshControl: UIControl {
+    override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         
         guard let scrollView = self.superview as? UIScrollView else {
