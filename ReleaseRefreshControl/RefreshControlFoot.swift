@@ -9,7 +9,7 @@
 import UIKit
 
 open class RefreshControlFoot: RefreshControl {
-    var refreshHeight:CGFloat = 65
+    open var refreshHeight:CGFloat = 65
     
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
