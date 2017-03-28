@@ -33,7 +33,7 @@ open class RefreshControlHead: RefreshControl {
             
             if scrollView.contentOffset.y <= -refreshHeight && scrollView.isDragging {
                 updatedWithState(state: .threshold)
-            } else if scrollView.contentOffset.y <= -refreshHeight, !isRefreshing {
+            } else if scrollView.contentOffset.y <= -refreshHeight && !isRefreshing {
                 var contentInset = scrollView.contentInset
                 contentInset.top = refreshHeight
                 scrollView.contentInset = contentInset
