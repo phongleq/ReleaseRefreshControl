@@ -8,7 +8,7 @@
 
 import UIKit
 
-open enum RefreshState {
+public enum RefreshState {
     case idle
     case pulling
     case threshold
