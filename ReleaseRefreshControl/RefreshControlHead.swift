@@ -27,16 +27,19 @@ open class RefreshControlHead: RefreshControl {
             guard let scrollView = object as? UIScrollView else { return }
             
             if scrollView.contentOffset.y == 0 {
+                isRefreshing = false
                 updatedWithState(state: .idle)
             }
             
             if scrollView.contentOffset.y <= -refreshHeight && scrollView.isDragging {
                 updatedWithState(state: .threshold)
-            } else if scrollView.contentOffset.y <= -refreshHeight {
+            } else if scrollView.contentOffset.y <= -refreshHeight, !isRefreshing {
                 var contentInset = scrollView.contentInset
                 contentInset.top = refreshHeight
                 scrollView.contentInset = contentInset
-                updatedWithState(state: .refershing)
+                updatedWithState(state: .refreshing)
+                
+                isRefreshing = true
                 
                 sendActions(for: .valueChanged)
             } else {

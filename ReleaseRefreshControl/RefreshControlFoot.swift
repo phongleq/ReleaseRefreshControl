@@ -31,16 +31,19 @@ open class RefreshControlFoot: RefreshControl {
             let offSet = scrollView.contentOffset.y
             
             if scrollView.contentOffset.y == contentHeight {
+                isRefreshing = false
                 updatedWithState(state: .idle)
             }
             
             if scrollView.contentOffset.y + height >= contentHeight + refreshHeight && scrollView.isDragging {
                 updatedWithState(state: .threshold)
-            } else if offSet > 0, offSet + height >= contentHeight + refreshHeight {
+            } else if offSet > 0, offSet + height >= contentHeight + refreshHeight, !isRefreshing {
                 var contentInset = scrollView.contentInset
                 contentInset.bottom = refreshHeight
                 scrollView.contentInset = contentInset
-                updatedWithState(state: .refershing)
+                updatedWithState(state: .refreshing)
+                
+                isRefreshing = true
                 
                 sendActions(for: .valueChanged)
             } else {

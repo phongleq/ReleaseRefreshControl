@@ -12,7 +12,7 @@ public enum RefreshState {
     case idle
     case pulling
     case threshold
-    case refershing
+    case refreshing
 }
 
 internal extension String {
@@ -20,6 +20,8 @@ internal extension String {
 }
 
 open class RefreshControl: UIControl {
+    var isRefreshing:Bool = false
+    
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         
