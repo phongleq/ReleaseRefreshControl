@@ -28,6 +28,7 @@ open class RefreshControlFoot: RefreshControl {
             
             let height = scrollView.frame.height
             let contentHeight = scrollView.contentSize.height
+            let offSet = scrollView.contentOffset.y
             
             if scrollView.contentOffset.y == contentHeight {
                 updatedWithState(state: .idle)
@@ -35,7 +36,7 @@ open class RefreshControlFoot: RefreshControl {
             
             if scrollView.contentOffset.y + height >= contentHeight + refreshHeight && scrollView.isDragging {
                 updatedWithState(state: .threshold)
-            } else if scrollView.contentOffset.y + height >= contentHeight + refreshHeight {
+            } else if offSet > 0, offSet + height >= contentHeight + refreshHeight {
                 var contentInset = scrollView.contentInset
                 contentInset.bottom = refreshHeight
                 scrollView.contentInset = contentInset
