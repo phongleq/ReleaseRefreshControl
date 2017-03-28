@@ -53,5 +53,7 @@ open class RefreshControl: UIControl {
             scrollView.contentInset = .zero
             self.updatedWithState(state: .idle)
         })
+        
+        isRefreshing = false
     }
 }
