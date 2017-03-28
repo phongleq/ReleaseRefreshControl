@@ -48,7 +48,7 @@ open class RefreshControlFoot: RefreshControl {
             let contentHeight = scrollView.contentSize.height
             let offSet = scrollView.contentOffset.y
             
-            guard offSet > 0 else {
+            guard offSet > 0 && contentHeight > height else {
                 self.isHidden = true
                 return
             }
