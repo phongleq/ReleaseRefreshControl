@@ -38,7 +38,7 @@ open class RefreshControl: UIControl {
         scrollView.removeObserver(self, forKeyPath: .contentOffset)
     }
     
-    func updatedWithState(state:RefreshState) {
+    open func updatedWithState(state:RefreshState) {
         preconditionFailure("This method must be overridden")
     }
     

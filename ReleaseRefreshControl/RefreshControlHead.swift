@@ -49,6 +49,6 @@ open class RefreshControlHead: RefreshControl {
         }
     }
     
-    override func updatedWithState(state:RefreshState) {
+    override open func updatedWithState(state:RefreshState) {
     }
 }
