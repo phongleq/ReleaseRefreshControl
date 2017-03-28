@@ -20,6 +20,8 @@ open class RefreshControlFoot: RefreshControl {
         let width = scrollView.frame.width
         let contentHeight = scrollView.contentSize.height
         self.frame = CGRect(x: 0, y: contentHeight, width: width, height: refreshHeight)
+        
+        self.isHidden = contentHeight == 0
     }
     
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -41,9 +43,17 @@ open class RefreshControlFoot: RefreshControl {
         if keyPath == .contentOffset {
             guard let scrollView = object as? UIScrollView else { return }
             guard !isRefreshing else { return }
+            
             let height = scrollView.frame.height
             let contentHeight = scrollView.contentSize.height
             let offSet = scrollView.contentOffset.y
+            
+            guard offSet > 0 else {
+                self.isHidden = true
+                return
+            }
+            
+            self.isHidden = false
             
             if scrollView.contentOffset.y == contentHeight {
                 isRefreshing = false
@@ -67,7 +77,6 @@ open class RefreshControlFoot: RefreshControl {
             } else {
                 updatedWithState(state: .pulling)
             }
-            
             
             let width = scrollView.frame.width
             self.frame = CGRect(x: 0, y: contentHeight, width: width, height: refreshHeight)
