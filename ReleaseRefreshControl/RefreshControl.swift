@@ -27,7 +27,7 @@ open class RefreshControl: UIControl {
             return
         }
         
-        scrollView.addObserver(self, forKeyPath: .contentOffset, options: [.initial,.new], context: nil)
+        scrollView.addObserver(self, forKeyPath: .contentOffset, options: [.new], context: nil)
     }
     
     deinit {
