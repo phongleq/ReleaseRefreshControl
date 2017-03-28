@@ -42,7 +42,7 @@ open class RefreshControl: UIControl {
         preconditionFailure("This method must be overridden")
     }
     
-    func endRefresh() {
+    open func endRefresh() {
         guard let scrollView = self.superview as? UIScrollView else {
             return
         }
