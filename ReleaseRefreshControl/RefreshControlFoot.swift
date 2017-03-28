@@ -23,9 +23,24 @@ open class RefreshControlFoot: RefreshControl {
     }
     
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == .isDragging {
+            guard let scrollView = object as? UIScrollView else { return }
+            guard !isRefreshing else { return }
+            
+            let height = scrollView.frame.height
+            let contentHeight = scrollView.contentSize.height
+            let offSet = scrollView.contentOffset.y
+            
+            if offSet + height > contentHeight && offSet + height < contentHeight + refreshHeight {
+                UIView.animate(withDuration: 0.5, animations: {
+                    scrollView.contentInset = .zero
+                })
+            }
+        }
+        
         if keyPath == .contentOffset {
             guard let scrollView = object as? UIScrollView else { return }
-            
+            guard !isRefreshing else { return }
             let height = scrollView.frame.height
             let contentHeight = scrollView.contentSize.height
             let offSet = scrollView.contentOffset.y
@@ -33,19 +48,22 @@ open class RefreshControlFoot: RefreshControl {
             if scrollView.contentOffset.y == contentHeight {
                 isRefreshing = false
                 updatedWithState(state: .idle)
+                scrollView.contentInset = .zero
             }
             
-            if scrollView.contentOffset.y + height >= contentHeight + refreshHeight && scrollView.isDragging {
+            if offSet + height >= contentHeight + refreshHeight {
                 updatedWithState(state: .threshold)
-            } else if offSet > 0 && offSet + height >= contentHeight + refreshHeight && !isRefreshing {
+                if !scrollView.isDragging { 
+                    updatedWithState(state: .refreshing)
+                    
+                    isRefreshing = true
+                    
+                    sendActions(for: .valueChanged)
+                }
+                
                 var contentInset = scrollView.contentInset
                 contentInset.bottom = refreshHeight
                 scrollView.contentInset = contentInset
-                updatedWithState(state: .refreshing)
-                
-                isRefreshing = true
-                
-                sendActions(for: .valueChanged)
             } else {
                 updatedWithState(state: .pulling)
             }

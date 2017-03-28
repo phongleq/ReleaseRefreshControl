@@ -23,26 +23,43 @@ open class RefreshControlHead: RefreshControl {
     }
     
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if keyPath == .isDragging {
+            guard let scrollView = object as? UIScrollView else { return }
+            guard !isRefreshing else { return }
+            if scrollView.contentOffset.y < 0 && scrollView.contentOffset.y > -refreshHeight {
+                UIView.animate(withDuration: 0.5, animations: { 
+                    scrollView.contentInset = .zero
+                })
+            }
+        }
+        
         if keyPath == .contentOffset{
             guard let scrollView = object as? UIScrollView else { return }
+            guard !isRefreshing else { return }
             
-            if scrollView.contentOffset.y == 0 {
+            let offset = scrollView.contentOffset.y
+            
+            if offset == 0 {
                 isRefreshing = false
                 updatedWithState(state: .idle)
+                scrollView.contentInset = .zero
             }
             
-            if scrollView.contentOffset.y <= -refreshHeight && scrollView.isDragging {
+            if offset <= -refreshHeight {
                 updatedWithState(state: .threshold)
-            } else if scrollView.contentOffset.y <= -refreshHeight && !isRefreshing {
+                
+                if !scrollView.isDragging {
+                    updatedWithState(state: .refreshing)
+                    
+                    isRefreshing = true
+                    
+                    sendActions(for: .valueChanged)
+                }
                 var contentInset = scrollView.contentInset
                 contentInset.top = refreshHeight
                 scrollView.contentInset = contentInset
-                updatedWithState(state: .refreshing)
-                
-                isRefreshing = true
-                
-                sendActions(for: .valueChanged)
-            } else {
+            }  else {
                 updatedWithState(state: .pulling)
             }
             

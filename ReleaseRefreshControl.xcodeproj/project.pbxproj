@@ -11,6 +11,11 @@
 		ED452BED1E89B13E00EA2C89 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452BEC1E89B13E00EA2C89 /* RefreshControl.swift */; };
 		ED452BEF1E89B27000EA2C89 /* RefreshControlHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452BEE1E89B27000EA2C89 /* RefreshControlHead.swift */; };
 		ED452BF11E89B28F00EA2C89 /* RefreshControlFoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452BF01E89B28F00EA2C89 /* RefreshControlFoot.swift */; };
+		ED452C0E1E8A24F600EA2C89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452C0D1E8A24F600EA2C89 /* AppDelegate.swift */; };
+		ED452C101E8A24F600EA2C89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452C0F1E8A24F600EA2C89 /* ViewController.swift */; };
+		ED452C131E8A24F600EA2C89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED452C111E8A24F600EA2C89 /* Main.storyboard */; };
+		ED452C151E8A24F600EA2C89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED452C141E8A24F600EA2C89 /* Assets.xcassets */; };
+		ED452C181E8A24F600EA2C89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED452C161E8A24F600EA2C89 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +25,24 @@
 		ED452BEC1E89B13E00EA2C89 /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		ED452BEE1E89B27000EA2C89 /* RefreshControlHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlHead.swift; sourceTree = "<group>"; };
 		ED452BF01E89B28F00EA2C89 /* RefreshControlFoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlFoot.swift; sourceTree = "<group>"; };
+		ED452C0B1E8A24F600EA2C89 /* ReleaseRefreshControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReleaseRefreshControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED452C0D1E8A24F600EA2C89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED452C0F1E8A24F600EA2C89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED452C121E8A24F600EA2C89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED452C141E8A24F600EA2C89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED452C171E8A24F600EA2C89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED452C191E8A24F600EA2C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ED452BDD1E89B0EE00EA2C89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED452C081E8A24F600EA2C89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				ED452BE31E89B0EE00EA2C89 /* ReleaseRefreshControl */,
+				ED452C0C1E8A24F600EA2C89 /* ReleaseRefreshControlDemo */,
 				ED452BE21E89B0EE00EA2C89 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				ED452BE11E89B0EE00EA2C89 /* ReleaseRefreshControl.framework */,
+				ED452C0B1E8A24F600EA2C89 /* ReleaseRefreshControlDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,6 +80,19 @@
 				ED452BF01E89B28F00EA2C89 /* RefreshControlFoot.swift */,
 			);
 			path = ReleaseRefreshControl;
+			sourceTree = "<group>";
+		};
+		ED452C0C1E8A24F600EA2C89 /* ReleaseRefreshControlDemo */ = {
+			isa = PBXGroup;
+			children = (
+				ED452C0D1E8A24F600EA2C89 /* AppDelegate.swift */,
+				ED452C0F1E8A24F600EA2C89 /* ViewController.swift */,
+				ED452C111E8A24F600EA2C89 /* Main.storyboard */,
+				ED452C141E8A24F600EA2C89 /* Assets.xcassets */,
+				ED452C161E8A24F600EA2C89 /* LaunchScreen.storyboard */,
+				ED452C191E8A24F600EA2C89 /* Info.plist */,
+			);
+			path = ReleaseRefreshControlDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,18 +127,40 @@
 			productReference = ED452BE11E89B0EE00EA2C89 /* ReleaseRefreshControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		ED452C0A1E8A24F600EA2C89 /* ReleaseRefreshControlDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED452C1C1E8A24F600EA2C89 /* Build configuration list for PBXNativeTarget "ReleaseRefreshControlDemo" */;
+			buildPhases = (
+				ED452C071E8A24F600EA2C89 /* Sources */,
+				ED452C081E8A24F600EA2C89 /* Frameworks */,
+				ED452C091E8A24F600EA2C89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReleaseRefreshControlDemo;
+			productName = ReleaseRefreshControlDemo;
+			productReference = ED452C0B1E8A24F600EA2C89 /* ReleaseRefreshControlDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		ED452BD81E89B0EE00EA2C89 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Phong Le";
 				TargetAttributes = {
 					ED452BE01E89B0EE00EA2C89 = {
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					ED452C0A1E8A24F600EA2C89 = {
+						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -115,6 +171,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = ED452BD71E89B0EE00EA2C89;
 			productRefGroup = ED452BE21E89B0EE00EA2C89 /* Products */;
@@ -122,6 +179,7 @@
 			projectRoot = "";
 			targets = (
 				ED452BE01E89B0EE00EA2C89 /* ReleaseRefreshControl */,
+				ED452C0A1E8A24F600EA2C89 /* ReleaseRefreshControlDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +189,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED452C091E8A24F600EA2C89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED452C181E8A24F600EA2C89 /* LaunchScreen.storyboard in Resources */,
+				ED452C151E8A24F600EA2C89 /* Assets.xcassets in Resources */,
+				ED452C131E8A24F600EA2C89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +215,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED452C071E8A24F600EA2C89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED452C101E8A24F600EA2C89 /* ViewController.swift in Sources */,
+				ED452C0E1E8A24F600EA2C89 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ED452C111E8A24F600EA2C89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED452C121E8A24F600EA2C89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED452C161E8A24F600EA2C89 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED452C171E8A24F600EA2C89 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED452BE71E89B0EE00EA2C89 /* Debug */ = {
@@ -290,6 +386,30 @@
 			};
 			name = Release;
 		};
+		ED452C1A1E8A24F600EA2C89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ReleaseRefreshControlDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phongleq.ReleaseRefreshControlDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED452C1B1E8A24F600EA2C89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ReleaseRefreshControlDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phongleq.ReleaseRefreshControlDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -310,6 +430,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		ED452C1C1E8A24F600EA2C89 /* Build configuration list for PBXNativeTarget "ReleaseRefreshControlDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED452C1A1E8A24F600EA2C89 /* Debug */,
+				ED452C1B1E8A24F600EA2C89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

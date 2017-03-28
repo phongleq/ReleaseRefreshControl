@@ -17,10 +17,11 @@ public enum RefreshState {
 
 internal extension String {
     static let contentOffset = "contentOffset"
+    static let isDragging = "pan.state"
 }
 
 open class RefreshControl: UIControl {
-    var isRefreshing:Bool = false
+    open var isRefreshing:Bool = false
     
     override open func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -30,6 +31,7 @@ open class RefreshControl: UIControl {
         }
         
         scrollView.addObserver(self, forKeyPath: .contentOffset, options: [.new], context: nil)
+        scrollView.addObserver(self, forKeyPath: .isDragging, options: [.new], context: nil)
     }
     
     deinit {
@@ -38,6 +40,7 @@ open class RefreshControl: UIControl {
         }
         
         scrollView.removeObserver(self, forKeyPath: .contentOffset)
+        scrollView.removeObserver(self, forKeyPath: .isDragging)
     }
     
     open func updatedWithState(state:RefreshState) {

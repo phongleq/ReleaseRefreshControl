@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ReleaseRefreshControlDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>ED452BE01E89B0EE00EA2C89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED452C0A1E8A24F600EA2C89</key>
 		<dict>
 			<key>primary</key>
 			<true/>
